@@ -1,19 +1,5 @@
 ﻿  AncientCityRPG.cpp
-C:\Users\plugu\source\repos\ConsoleApplication1\ConsoleApplication1\monsters.h(59,6): error C2371:  'goblin::type': redefinition; different basic types
-C:\Users\plugu\source\repos\ConsoleApplication1\ConsoleApplication1\monsters.h(58): message :  see declaration of 'goblin::type'
-C:\Users\plugu\source\repos\ConsoleApplication1\ConsoleApplication1\monsters.h(63,3): error C2065:  'experience': undeclared identifier
-C:\Users\plugu\source\repos\ConsoleApplication1\ConsoleApplication1\monsters.h(64,3): error C2065:  'health': undeclared identifier
-C:\Users\plugu\source\repos\ConsoleApplication1\ConsoleApplication1\monsters.h(65,3): error C2065:  'combat': undeclared identifier
-C:\Users\plugu\source\repos\ConsoleApplication1\ConsoleApplication1\monsters.h(66,3): error C2065:  'magic': undeclared identifier
-C:\Users\plugu\source\repos\ConsoleApplication1\ConsoleApplication1\monsters.h(67,3): error C2065:  'armor': undeclared identifier
-C:\Users\plugu\source\repos\ConsoleApplication1\ConsoleApplication1\monsters.h(71,5): error C2065:  'weapon': undeclared identifier
-C:\Users\plugu\source\repos\ConsoleApplication1\ConsoleApplication1\monsters.h(74,5): error C2065:  'weapon': undeclared identifier
-C:\Users\plugu\source\repos\ConsoleApplication1\ConsoleApplication1\monsters.h(77,5): error C2065:  'weapon': undeclared identifier
-C:\Users\plugu\source\repos\ConsoleApplication1\ConsoleApplication1\monsters.h(80,5): error C2065:  'weapon': undeclared identifier
-C:\Users\plugu\source\repos\ConsoleApplication1\ConsoleApplication1\monsters.h(90,10): error C2065:  'weapon': undeclared identifier
-C:\Users\plugu\source\repos\ConsoleApplication1\ConsoleApplication1\monsters.h(93,10): error C2065:  'experience': undeclared identifier
-C:\Users\plugu\source\repos\ConsoleApplication1\ConsoleApplication1\monsters.h(96,10): error C2065:  'health': undeclared identifier
-C:\Users\plugu\source\repos\ConsoleApplication1\ConsoleApplication1\monsters.h(99,10): error C2065:  'combat': undeclared identifier
-C:\Users\plugu\source\repos\ConsoleApplication1\ConsoleApplication1\monsters.h(102,10): error C2065:  'magic': undeclared identifier
-C:\Users\plugu\source\repos\ConsoleApplication1\ConsoleApplication1\monsters.h(105,10): error C2065:  'armor': undeclared identifier
-C:\Users\plugu\source\repos\ConsoleApplication1\ConsoleApplication1\AncientCityRPG.cpp(55,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\plugu\source\repos\ConsoleApplication1\ConsoleApplication1\AncientCityRPG.cpp(45,13): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\plugu\source\repos\ConsoleApplication1\ConsoleApplication1\AncientCityRPG.cpp(330,13): warning C4018:  '>=': signed/unsigned mismatch
+C:\Users\plugu\source\repos\ConsoleApplication1\ConsoleApplication1\AncientCityRPG.cpp(345,13): warning C4018:  '>=': signed/unsigned mismatch
+  ConsoleApplication1.vcxproj -> C:\Users\plugu\source\repos\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe

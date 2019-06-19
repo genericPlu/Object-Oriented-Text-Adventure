@@ -1,169 +1,135 @@
 #ifndef MONSTERS_H_
 #define MONSTERS_H_
+
 #pragma once
-#include <iostream>
-#include <string>
-//Monster type definitions, variables , and functions.
-class monster {
-private:
-	int experience;
+
+enum {
+	TOTAL_MONSTERS = 3
+
+};
+
+using std::string;
+
+//Monster class definitions, variables , and functions.
+class Monster {
+	unsigned int experience;
 	int health;
-	int combat;
-	int magic;
+	unsigned int combat;
+	unsigned int magic;
 	int armor;
+	int gold;
+	item treasure;
+	string species;
+	Weapon monsterWeapon;
+
 
 public:
-	monster(int e = 0, int c = 0, int h = 0, int m = 0, int a = 0) : experience(e), combat(c), health(h), magic(m), armor(a) {
-		
-	}
-	int getExperience() {
-		return experience;
-	};
-	void setExperience(int e) {
-		experience = e;
-	};
+	Monster() :
+		experience(0),
+		health(0),
+		combat(0),
+		magic(0),
+		armor(10){}
 
+
+	//Getters
+	unsigned int getExperience() {
+		return experience;
+	}
 	int getHealth() {
 		return health;
-	};
+	}
+	unsigned int getCombat() {
+		return combat;
+	}
+	unsigned int getMagic() {
+		return magic;
+	}
+	int getArmor() {
+		return armor;
+	}
+	int getGold() {
+		return gold;
+	}
+	string getSpecies() {
+		return species;
+	}
+	item getTreasure() {
+
+	}
+	Weapon getWeapon() {
+		return monsterWeapon;
+	}
+
 	void setHealth(int h) {
 		health = h;
-	};
-
-	int getCombat() {
-		return combat;
-	};
+	}
+	void setExperience(int e) {
+		experience = e;
+	}
 	void setCombat(int c) {
 		combat = c;
-	};
-
-	int getMagic() {
-		return magic;
-	};
+	}
 	void setMagic(int m) {
 		magic = m;
-	};
-
-	int getArmor() {
-		return armor;
-	};
+	}
 	void setArmor(int a) {
 		armor = a;
-	};
-};
-
-class goblin {
-
-	//Stats
-	std::string type = "goblin";
-	int type;
-
-public:
-	goblin() {
-		experience = 100;
-		health = 20;
-		combat = 5;
-		magic = 0;
-		armor = 2;
-		int temp = rand() % 4;
-		switch (temp) {
-			case 1:
-				weapon = "spear";
-				break;
-			case 2:
-				weapon = "sword";
-				break;
-			case 3:
-				weapon = "mace";
-				break;
-			default:
-				weapon = "dagger";
-				break;
 	}
-}
-	
-	//Getters
-	std::string getType() {
-		return type;
-	};
-	std::string getWeapon() {
-		return weapon;
-	};
-	int getExperience() {
-		return experience;
-	};
-	int getHealth() {
-		return health;
-	};
-	int getCombat() {
-		return combat;
-	};
-	int getMagic() {
-		return magic;
-	};
-	int getArmor() {
-		return armor;
-	};
-
+	void setGold(int g) {
+		gold = g;
+	}
+	void setTreausre(item t) {
+		treasure = t;
+	}
+	void setSpecies(string s) {
+		species = s;
+	}
+	void setWeapon(Weapon w) {
+		monsterWeapon = w;
+	}
+	~Monster() {}
 };
 
+class Goblin : public Monster {
+private:
 
-class skeleton {
-
-	//Stats
-	std::string type = "skeleton";
-	std::string weapon;
-	int experience;
-	int health;
-	int combat;
-	int magic;
-	int armor;
 
 public:
-	skeleton() {
-		experience = 200;
-		health = 30;
-		combat = 7;
-		magic = 0;
-		armor = 3;
-		int temp = rand() % 4;
-		switch (temp) {
-		case 1:
-			weapon = "spear";
-			break;
-		case 2:
-			weapon = "sword";
-			break;
-		case 3:
-			weapon = "mace";
-			break;
-		default:
-			weapon = "dagger";
-			break;
+	Goblin() {
+		setSpecies("goblin");
+		setExperience(100);
+		setHealth(10);
+		setCombat(20);
+		setArmor(10);
+	}
+};
+	class Skeleton : public Monster {
+	private:
+		
+	public:
+		Skeleton() {
+			setSpecies("skeleton");
+			setExperience(100);
+			setHealth(10);
+			setCombat(19);
+			setArmor(8);
 		}
-	}
-	//Getters
-	std::string getType() {
-		return type;
-	};
-	std::string getWeapon() {
-		return type;
-	};
-	int getExperience() {
-		return experience;
-	};
-	int getHealth() {
-		return health;
-	};
-	int getCombat() {
-		return combat;
-	};
-	int getMagic() {
-		return magic;
-	};
-	int getArmor() {
-		return armor;
-	};
+		
+};
+
+	class Lizardman : public Monster {
+	private:
+		
+	public:
+		Lizardman() {
+			setSpecies("lizard man");
+			setExperience(100);
+			setHealth(10);
+			setCombat(18);
+			setArmor(9);
+			
+		}
 
 };
 
