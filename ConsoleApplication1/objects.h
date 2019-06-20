@@ -17,14 +17,16 @@ enum {
 
 };
 
-class item {
+class Item {
 private:
 	int cost;
 	int weight;
 	string name;
 	string description;
 public:
-	item(){}
+	Item(): 
+		cost(0),
+		weight(0)	{}
 
 	string getName() {
 		return name;
@@ -56,11 +58,11 @@ public:
 		cout << "Weight:" << weight << "\n";
 		cout << "Description:" << description << "\n";
 	}
-	~item() {};
+	~Item() {};
 };
 
-//Miscellaneous is useable items like rope, bomb, lanterns and anything else we come up withalong those lines.
-class Rope : public item {
+//Miscellaneous is useable Items like rope, bomb, lanterns and anything else we come up withalong those lines.
+class Rope : public Item {
 private:
 	int uses;
 public:
@@ -69,9 +71,12 @@ public:
 		setCost(35);
 		setWeight(3);
 	}
+	int getUses() {
+		return uses;
+	}
 };
 
-class Bomb : public item {
+class Bomb : public Item {
 private:
 	int uses;
 public:
@@ -82,7 +87,7 @@ public:
 	}
 };
 
-class Lantern : public item {
+class Lantern : public Item {
 private:
 	int oil;
 public:
@@ -93,15 +98,34 @@ public:
 	}
 };
 
+class Lockpicks : public Item {
+private:
+	int picks;
+public:
+	Lockpicks() : picks(3) {
+		setName("lock picks");
+		setCost(50);
+		setWeight(2);
+	}
+	int getPicks() {
+		return picks;
+	}
+	void setPicks(int p) {
+		picks = p;
+	}
+};
 
 //Weapons subclasses
-class Weapon: public item{
+class Weapon: public Item{
 private:
 	char type;
 	int condition;
 	int dmg;
 public:
-	Weapon(){}
+	Weapon(): 
+		type('p'),
+		condition(0),
+		dmg(0){}
 	
 	char getType(){
 		return type;
@@ -318,19 +342,107 @@ public:
 };
 
 //Armor Subclasses
-class Armor : public item {
+class Armor : public Item {
 private:
 	int armor;
 public:
-	Armor(){}
+	Armor()	:
+	armor(0){}
+	int getArmor() {
+		return armor;
+	}
+	void setArmor(int a) {
+		armor = a;
+	}
 };
 
-//Potion subclasses
-class Potion : public item {
+class LeatherArmor : public Armor {
 private:
 
 public:
-	Potion() {}
+	LeatherArmor(){
+		setName("leather armor");
+		setArmor(7);
+		setDescription("Light armor that offers minimal protection.");
+		setCost(25);
+		setWeight(10);
+	}
+	
+};
+
+class ChainArmor : public Armor {
+private:
+
+public:
+	ChainArmor() {
+		setName("chain armor");
+		setArmor(3);
+		setDescription("Medium armor that offers medium protection.");
+		setCost(50);
+		setWeight(12);
+	}
+
+};
+
+class PlateArmor : public Armor {
+private:
+
+public:
+	PlateArmor() {
+		setName("plate armor");
+		setArmor(0);
+		setDescription("Heavy armor that offers heavy protection.");
+		setCost(100);
+		setWeight(15);
+	}
+
+};
+
+
+//Potion subclasses
+class Potion : public Item {
+private:
+	int uses;
+public:
+	Potion() :
+	uses(3){}
+	int getUses() {
+		return uses;
+	}
+
+	void setUses(int u) {
+		uses = u;
+	}
+};
+
+//Heal potion subclass
+class HealPotion : public Potion {
+private:
+	int health;
+public:
+	HealPotion(): health(0) {}
+
+	int getHealth() {
+		return health;
+	}
+
+	void setHealth(int h) {
+		health = h;
+	}
+};
+
+//Minor heal...
+class MinorHealPotion : public HealPotion {
+private:
+
+public:
+	MinorHealPotion() {
+		setHealth(10);
+		setName("minor healing potion");
+		setDescription("A potion of minor healing.");
+		setCost(50);
+		setWeight(3);
+	}
 };
 
 

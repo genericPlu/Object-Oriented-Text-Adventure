@@ -1,5 +1,2 @@
 ﻿  AncientCityRPG.cpp
-C:\Users\plugu\source\repos\ConsoleApplication1\ConsoleApplication1\AncientCityRPG.cpp(45,13): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\plugu\source\repos\ConsoleApplication1\ConsoleApplication1\AncientCityRPG.cpp(330,13): warning C4018:  '>=': signed/unsigned mismatch
-C:\Users\plugu\source\repos\ConsoleApplication1\ConsoleApplication1\AncientCityRPG.cpp(345,13): warning C4018:  '>=': signed/unsigned mismatch
   ConsoleApplication1.vcxproj -> C:\Users\plugu\source\repos\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe

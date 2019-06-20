@@ -13,21 +13,23 @@ class player{
 		 string charClass;
 
 		//Stats
-		 unsigned int charclass;
-		 unsigned int level;
-		 unsigned int experience;
+		 int charclass;
+		 int level;
+		 int experience;
 		 int health;
-		 unsigned int combat;
-		 unsigned int magic;
+		 int combat;
+		 int magic;
 		 int armor;
-		 unsigned int gold;
-		 unsigned int positionX;
-		 unsigned int positionY;
+		 int gold;
+		 int weight;
+		 int allowedWeight;
+		 int positionX;
+		 int positionY;
 		 
 		 //Equipment
 		 Weapon playerWeapon;
 		 Armor playerArmor;
-		 vector<item>  inventory;
+		 vector<Item>  inventory;
 
 
 
@@ -38,9 +40,13 @@ class player{
 			health(0),
 			combat(0),
 			magic(0),
-			armor(0){
+			armor(0),
+			gold(100),
+			weight(0),
+			allowedWeight(50) {
 			Stick startWeapon;
 			setWeapon(startWeapon);
+			setWeight(startWeapon.getWeight());
 			name = n;
 		}
 		//Setters
@@ -86,13 +92,24 @@ class player{
 		void setGold(int g) {
 			gold = g;
 		}
+		void setWeight(int w) {
+			weight = w;
+		}
+		void setAllowedWeight(int w) {
+			allowedWeight = w;
+		}
 		void setWeapon(Weapon w) {
 			playerWeapon = w;
 		}
 		void setArmor(Armor a) {
 			playerArmor = a;
 		}
+		void addToInventory(Item a) {
+			inventory.push_back(a);
+		}
+
 		
+
 		//Getters
 		Weapon getWeapon() {
 			return playerWeapon;
@@ -136,7 +153,27 @@ class player{
 		int getGold() {
 			return gold;
 		}
+		int getWeight() {
+			return weight;
+		}
+		int getAllowedWeight() {
+			return allowedWeight;
+		}
+		Item getInventoryItem(string name) {
+			for (int i = 0; i < inventory.size(); i++) {
+				if(inventory[i].getName() == name)
+					return inventory[i];
+			}
+		}
 
+		void displayInventory() {
+			for (int i = 0; i < inventory.size(); i++) {
+				cout << "Item:" << inventory[i].getName() << "\n";
+				cout << "Cost:" << inventory[i].getCost() << "\n";
+				cout << "Weight:" << inventory[i].getWeight() << "\n";
+				cout << "Description:" << inventory[i].getDescription() << "\n";
+			}
+		}
 
 		//Display Stats Command
 		void display() {
@@ -154,7 +191,6 @@ class player{
 			cout << "Inventory:\n";
 			for (int i = 0; i < inventory.size(); i++) {
 				inventory[i].displayItem();
-				cout << ", ";
 			}
 			
 		}

@@ -10,15 +10,15 @@ enum {
 
 using std::string;
 
-//Monster class definitions, variables , and functions.
+//Monster class 
 class Monster {
-	unsigned int experience;
+	int experience;
 	int health;
-	unsigned int combat;
-	unsigned int magic;
+	int combat;
+	int magic;
 	int armor;
 	int gold;
-	item treasure;
+	Item treasure;
 	string species;
 	Weapon monsterWeapon;
 
@@ -29,20 +29,21 @@ public:
 		health(0),
 		combat(0),
 		magic(0),
-		armor(10){}
+		armor(10),
+		gold(10){}
 
 
 	//Getters
-	unsigned int getExperience() {
+	int getExperience() {
 		return experience;
 	}
 	int getHealth() {
 		return health;
 	}
-	unsigned int getCombat() {
+	int getCombat() {
 		return combat;
 	}
-	unsigned int getMagic() {
+	int getMagic() {
 		return magic;
 	}
 	int getArmor() {
@@ -54,7 +55,7 @@ public:
 	string getSpecies() {
 		return species;
 	}
-	item getTreasure() {
+	Item getTreasure() {
 
 	}
 	Weapon getWeapon() {
@@ -79,7 +80,7 @@ public:
 	void setGold(int g) {
 		gold = g;
 	}
-	void setTreausre(item t) {
+	void setTreausre(Item t) {
 		treasure = t;
 	}
 	void setSpecies(string s) {
