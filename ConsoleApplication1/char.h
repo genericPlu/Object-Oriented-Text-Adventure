@@ -30,8 +30,7 @@ class player{
 		 Weapon playerWeapon;
 		 Armor playerArmor;
 		 vector<Item>  inventory;
-
-
+		 vector<Spell> spellbook;
 
 	public:
 		player(const string n) :
@@ -43,11 +42,11 @@ class player{
 			armor(0),
 			gold(100),
 			weight(0),
-			allowedWeight(50) {
+			allowedWeight(50), 
+			name(n) {
 			Stick startWeapon;
 			setWeapon(startWeapon);
 			setWeight(startWeapon.getWeight());
-			name = n;
 		}
 		//Setters
 		void setName(string n){
@@ -167,12 +166,19 @@ class player{
 		}
 
 		void displayInventory() {
-			for (int i = 0; i < inventory.size(); i++) {
-				cout << "Item:" << inventory[i].getName() << "\n";
-				cout << "Cost:" << inventory[i].getCost() << "\n";
-				cout << "Weight:" << inventory[i].getWeight() << "\n";
-				cout << "Description:" << inventory[i].getDescription() << "\n";
+			if (inventory.size() == 0) {
+				cout << "Your inventory is currently empty!\n";
 			}
+			else {
+				for (int i = 0; i < inventory.size(); i++) {
+					cout << "Item:" << inventory[i].getName() << "\n";
+					cout << "Cost:" << inventory[i].getCost() << "\n";
+					cout << "Weight:" << inventory[i].getWeight() << "\n";
+					cout << "Description:" << inventory[i].getDescription() << "\n";
+				}
+			}
+
+			
 		}
 
 		//Display Stats Command
