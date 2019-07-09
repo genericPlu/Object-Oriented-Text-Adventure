@@ -113,7 +113,7 @@ class player{
 		Weapon getWeapon() {
 			return playerWeapon;
 		}
-		Armor getArmorE() {
+		Armor getArmor() {
 			return playerArmor;
 		}
 		string getName(){
@@ -140,7 +140,7 @@ class player{
 		int getMagic(){
 			return magic;
 		}
-		int getArmor(){
+		int getArmorV(){
 			return armor;
 		}
 		int getPositionX() {
@@ -166,6 +166,12 @@ class player{
 		}
 
 		void displayInventory() {
+
+			playerWeapon.displayWeapon();
+
+
+			playerArmor.displayArmor();
+
 			if (inventory.size() == 0) {
 				cout << "Your inventory is currently empty!\n";
 			}

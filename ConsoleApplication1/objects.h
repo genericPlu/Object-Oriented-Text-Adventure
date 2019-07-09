@@ -121,6 +121,7 @@ private:
 	char type;
 	int condition;
 	int dmg;
+	
 public:
 	Weapon(): 
 		type('p'),
@@ -193,6 +194,7 @@ public:
 		setCost(100);
 		setDmg(8);
 		setCondition(0);
+		setWeight(8);
 		if (getCondition() == 1) {
 			setDmg(getDmg()-2);
 		}
@@ -229,15 +231,16 @@ public:
 		setType('p');
 		setCost(25);
 		setDmg(3);
+		setWeight(4);
 		setCondition(0);
 		if (getCondition() == 1) {
-			setDmg(getDmg()-2);
+			setDmg(getDmg()-1);
 		}
 		else if (getCondition() == 2) {
-			setDmg(getDmg() - 1);
+			setDmg(getDmg() - 0);
 		}
 		else if (getCondition() == 0) {
-			setDmg(getDmg() - 3);
+			setDmg(getDmg() - 2);
 		}
 		else if (getCondition() == 3) {
 			setDmg(getDmg() - 0);
@@ -266,6 +269,7 @@ public:
 		setCost(50);
 		setDmg(6);
 		setCondition(0);
+		setWeight(6);
 		if (getCondition() == 1) {
 			setDmg(getDmg() - 2);
 		}
@@ -300,6 +304,7 @@ public:
 		setType('b');
 		setCost(2);
 		setDmg(2);
+		setWeight(2);
 		//no condtion for sticks
 		setCondition(0);
 		
@@ -317,6 +322,7 @@ public:
 		setCost(35);
 		setDmg(4);
 		setCondition(0);
+		setWeight(3);
 		if (getCondition() == 1) {
 			setDmg(getDmg() - 2);
 		}
@@ -353,6 +359,15 @@ public:
 	}
 	void setArmor(int a) {
 		armor = a;
+	}
+
+	//Display Armor Stats Command
+	void displayArmor() {
+		cout << "Armor Type:" << getName() << "\n";
+		cout << "Armor Rateing:" << armor << "\n";
+		cout << "Cost:" << getCost() << "\n";
+		cout << "Weight:" << getWeight() << "\n";
+		cout << "Description:" << getDescription() << "\n";
 	}
 };
 

@@ -48,10 +48,58 @@ public:
 };
 
 //Attack Spells
+class explosion : public Spell {
+private:
+	
+public:
+	explosion() {
+		setCost(60);
+		setPointCost(4);
+		setType('a');
+		setDescription("A spell that damages enemys in an area around you, also functions as a bomb.");
+		
+
+	}
+};
+class magicMissle : public Spell {
+private:
+
+public:
+	magicMissle() {
+		setCost(30);
+		setPointCost(1);
+		setType('a');
+		setDescription("A simple spell that allows the user to shoot missle made up of magic at an enemy.");
+	}
+};
 
 //Defense Spells
+class Sheild : public Spell {
+private:
 
-//Action Spells
+public:
+	Sheild() {
+		setCost(40);
+		setPointCost(2);
+		setType('d');
+		setDescription("A speel made to protect the user from all attacks for a period of time");
+	}
+
+
+};
+class Darkness : public Spell {
+private:
+
+public:
+	Darkness() {
+		setCost(10);
+		setPointCost(1);
+		setType('d');
+		setDescription("A spell that envelops the area around your character in darkness.");
+	}
+};
+
+//Item Spells
 class Light : public Spell {
 private:
 
@@ -59,7 +107,7 @@ public:
 	Light() {
 		setCost(50);
 		setPointCost(2);
-		setType('a');
+		setType('i');
 		setDescription("Light spell that functions the same as the lantern item.");
 	}
 };
@@ -71,7 +119,7 @@ public:
 	Unlock() {
 		setCost(75);
 		setPointCost(4);
-		setType('a');
+		setType('i');
 		setDescription("Unlock spell that functions the same as the lockpicks item.");
 	}
 
@@ -84,7 +132,7 @@ public:
 	Levitate() {
 		setCost(75);
 		setPointCost(4);
-		setType('a');
+		setType('i');
 		setDescription("Levitate spell that functions the same as the rope item.");
 	}
 
